@@ -21,8 +21,8 @@ jobs:
 
       - name: Install Android build tools
         run: | 
-            apt update apt install
-            android-sdk-build-tools
+            apt update 
+            apt install android-sdk-build-tools
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
