@@ -46,13 +46,13 @@ jobs:
         uses: Swisyn/setup-android-sdk@v1
         with:
     # cmdline-tools-version. See https://developer.android.com/studio#command-line-tools-only
-          cmdline-tools-version: # optional, default is 11076708
+          cmdline-tools-version: 11076708 # optional, default is 11076708
     # Android SDK is usable only after the license agreement. Should setup-android agree to the licences, provided by "sdkmanager --licenses"
-          accept-android-sdk-licenses: # optional, default is true
+          accept-android-sdk-licenses: true # optional, default is true
     # Should accepted licenses be logged. If not, accepted licences will be accepted silently
-          log-accepted-android-sdk-licenses: # optional, default is true
+          log-accepted-android-sdk-licenses: true # optional, default is true
     # Additional packages to install
-          packages: # optional, default is tools platform-tools
+          packages: tools platform-tools # optional, default is tools platform-tools
           
 
       - name: Build Android Release APK
