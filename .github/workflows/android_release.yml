@@ -3,7 +3,10 @@ name: Build & Release Android
 on:
   push:
     tags:
-      - 'v*' # Trigger on version tags like v1.0.0
+      - '*' # Trigger on ANY tag to be safe
+    branches:
+      - main # Also run on pushes to main (optional, builds APK but skips release step if you want)
+  workflow_dispatch: # Allows manual trigger from the GitHub "Actions" tab
 
 permissions:
   contents: write
@@ -54,6 +57,7 @@ jobs:
           keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
 
       - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ steps.sign_app.outputs.signedReleaseFile }}
