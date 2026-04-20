@@ -2,10 +2,6 @@ name: Build & Release Android
 
 on:
   push:
-    tags:
-      - '*' # Trigger on ANY tag to be safe
-    branches:
-      - main # Also run on pushes to main (optional, builds APK but skips release step if you want)
   workflow_dispatch: # Allows manual trigger from the GitHub "Actions" tab
 
 permissions:
