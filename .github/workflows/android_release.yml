@@ -39,7 +39,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'zulu'
-
+          
       - name: android-ci-github-action
   # You may pin to the exact commit or the version.
   # uses: Code0987/android-ci-github-action@1095a471890bedc33fed0b788e59e045d331f009
