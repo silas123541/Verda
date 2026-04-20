@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --font-headline: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-label: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --color-bg: #F0F9F4;
+  --color-sidebar-bg: #1B4332;
+  --color-card-bg: #FFFFFF;
+  --color-primary: #40916C;
+  --color-secondary: #52796F;
+  --color-accent: #95D5B2;
+  --color-tomato: #FF4D4D;
+  --color-carrot: #FB8500;
+  --color-text-dark: #081C15;
+  --color-text-light: #D8F3DC;
+  --color-outline: #A7C4BC;
+  --color-sunlight: #FACC15;
+  
+  --color-surface: #FFFFFF;
+  --color-surface-container: #F0F9F4;
+  --color-surface-container-high: #E9F5EE;
+  --color-surface-container-low: #F8FBF9;
+  --color-surface-tint: #40916C;
+  
+  --shadow-vibrant: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+@layer base {
+  html, body {
+    @apply h-full w-full overflow-hidden fixed inset-0;
+    overscroll-behavior: none;
+  }
+  
+  body {
+    @apply bg-bg text-text-dark font-body antialiased transition-colors duration-300;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dark {
+    --color-bg: #081C15;
+    --color-sidebar-bg: #040D0A;
+    --color-card-bg: #1B4332;
+    --color-primary: #52B788;
+    --color-secondary: #B7E4C7;
+    --color-text-dark: #F0F9F4;
+    --color-text-light: #F8FBFA;
+    --color-outline: #52B788;
+    --color-surface: #1B4332;
+    --color-surface-container: #081C15;
+    --color-surface-container-high: #2D6A4F;
+    --color-surface-container-low: #1B4332;
+    --shadow-vibrant: 0 4px 20px rgba(0,0,0,0.4);
+  }
+}
+
+.primary-gradient {
+  background: linear-gradient(145deg, var(--color-primary) 0%, var(--color-sidebar-bg) 100%);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.plant-card {
+  @apply bg-card-bg rounded-[24px] p-6 shadow-vibrant border-2 border-transparent transition-all;
+}
+
+.plant-card.selected {
+  @apply border-primary;
+}
+
+.status-badge {
+  @apply text-[11px] font-bold uppercase px-2.5 py-1 rounded-full bg-surface-container-high text-primary;
+}

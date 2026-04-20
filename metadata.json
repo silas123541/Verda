@@ -1,0 +1,9 @@
+{
+  "name": "Remix: Verda",
+  "description": "Your digital sanctuary for botanical companions. Track, identify, and master the care of your garden.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
