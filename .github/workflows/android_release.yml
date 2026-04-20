@@ -40,19 +40,10 @@ jobs:
           java-version: '21'
           distribution: 'zulu'
 
-      - name: Setup Android SDK
+      - name: android-ci-github-action
   # You may pin to the exact commit or the version.
-  # uses: Swisyn/setup-android-sdk@e3e43cf6f87ec94a2c4970158fd2841712e78c66
-        uses: Swisyn/setup-android-sdk@v1
-        with:
-    # cmdline-tools-version. See https://developer.android.com/studio#command-line-tools-only
-          cmdline-tools-version: 11076708 # optional, default is 11076708
-    # Android SDK is usable only after the license agreement. Should setup-android agree to the licences, provided by "sdkmanager --licenses"
-          accept-android-sdk-licenses: true # optional, default is true
-    # Should accepted licenses be logged. If not, accepted licences will be accepted silently
-          log-accepted-android-sdk-licenses: true # optional, default is true
-    # Additional packages to install
-          packages: tools platform-tools # optional, default is tools platform-tools
+  # uses: Code0987/android-ci-github-action@1095a471890bedc33fed0b788e59e045d331f009
+          uses: Code0987/android-ci-github-action@v0.1.0
           
 
       - name: Build Android Release APK
