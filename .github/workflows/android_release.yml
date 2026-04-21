@@ -60,12 +60,12 @@ jobs:
           keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
       
       - name: Rename APK
-        run: mv ${{steps.sign_app.outputs.signedReleaseFile}} /android/Verda.apk
+        run: mv ${{steps.sign_app.outputs.signedReleaseFile}} android/Verda.apk
       
       - name: Create Release and Upload APK
         uses: softprops/action-gh-release@v2
         with:
-          files: /android/Verda.apk
+          files: android/Verda.apk
 
     
         env:
