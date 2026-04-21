@@ -2,6 +2,8 @@ name: Build & Release Android
 
 on:
   push:
+    tags:
+      - "v*.*.*"
   workflow_dispatch: # Allows manual trigger from the GitHub "Actions" tab
 
 permissions:
